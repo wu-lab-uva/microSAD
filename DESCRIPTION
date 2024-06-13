@@ -1,0 +1,30 @@
+Package: microSAD
+Title: Sampling-explicit fitting of microbial SAD
+Version: 1.0.0.0001
+Date: 2024-06-13
+Authors@R: c(
+    person(given = "Yingnan",
+           family = "Gao",
+           role = c("aut", "cre"),
+           email = "yg5ap@uw.edu",
+           comment = c(ORCID = "0000-0002-0960-4519")),
+    person(given = "Ahmed",
+           family = "Abdullah",
+           role = c("ctb"),
+           email = "aa6xk@virginia.edu",
+           comment = c(ORCID = "0000-0001-5550-9574")),
+    person(given = "Martin",
+           family = "Wu",
+           role = c("ctb"),
+           email = "mw4yv@virginia.edu",
+           comment = c(ORCID = "0000-0003-3093-4077")))
+Description: microSAD is an open source R package for testing Species Abundance Distribution (SAD) models in microbial communities. It provides approximate and exact numerical solutions to unique challenges in fitting microbial SADs, including the inherent sampling processes in 16S rRNA sequencing pipeline, 16S rRNA gene copy number variation among species, very large species abundance, and very small probability mass that may lead to erroneous model fitting in commonly used R packages such as sads. Currently, microSAD can test four base SAD models: logseries, lognormal, power law and powerbend. Although designed to work with microbial SAD data, microSAD can also be used to test SAD models in animal and plant communities.
+Depends:
+        sads
+Imports:
+        pracma
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
