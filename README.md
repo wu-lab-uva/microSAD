@@ -15,7 +15,7 @@ While primarily intended for microbial SAD data analysis, `microSAD` is also app
 
 Detailed description of the methods and analyses are available in the preprint: `A unifying model of species abundance distribution`
 
-doi: 10.1101/2024.06.14.599104
+doi: 10.1101/2024.06.14.599104 (https://www.biorxiv.org/content/10.1101/2024.06.14.599104v1)
 
 ## System requirements
 The package has been tested on using R version 4.3.2 (2023-10-31).
