@@ -11,7 +11,7 @@
 #' @return `sad2octave` returns a list containing the SAD in octave representation and the corresponding fitting metrics if a SAD fit is provided
 #' @export
 #' @rdname r2modified
-sad2octave = function(x,model,params,fixed=0){
+sad2octave = function(x,model,params,pred_rad,fixed=0){
   # convert SAD to octaves
   octaves = seq(0,floor(log2(max(x))),1)
   octave.x = sapply(octaves,function(i){
@@ -40,7 +40,14 @@ sad2octave = function(x,model,params,fixed=0){
   octave.AIC = 2*minuslogl+2*(length(params)-fixed)
   octave.BIC = 2*minuslogl+log(length(x))*(length(params)-fixed)
   octave.r2m = r2modified(obs = octave.x/sum(octave.x),pred = exp(octave.p),log = FALSE)
+  if(missing(pred_rad)){
+    octave.r2m_rad = NA
+  }else{
+    octave.rad = do.call(c,mapply(rep,octave,octave.x,SIMPLIFY = FALSE))
+    octave.rad_pred = floor(log2(sort(rad_pred)))
+    octave.r2m_rad = r2modified(obs = octave.rad,pred = octave.pred_rad,log = FALSE)
+  }
   return(list(octave=octave.x,probs=octave.p,minuslogl=minuslogl,
-              AIC=octave.AIC,BIC=octave.BIC,r2m=octave.r2m))
+              AIC=octave.AIC,BIC=octave.BIC,r2m=octave.r2m,r2m_rad=octave.r2m_rad))
 }
 
