@@ -43,9 +43,9 @@ sad2octave = function(x,model,params,pred_rad,fixed=0){
   if(missing(pred_rad)){
     octave.r2m_rad = NA
   }else{
-    octave.rad = do.call(c,mapply(rep,octave,octave.x,SIMPLIFY = FALSE))
-    octave.rad_pred = floor(log2(sort(rad_pred)))
-    octave.r2m_rad = r2modified(obs = octave.rad,pred = octave.pred_rad,log = FALSE)
+    octave.rad = do.call(c,mapply(rep,octaves,octave.x,SIMPLIFY = FALSE))
+    octave.rad_pred = floor(log2(sort(pred_rad)))
+    octave.r2m_rad = r2modified(obs = octave.rad,pred = octave.rad_pred,log = FALSE)
   }
   return(list(octave=octave.x,probs=octave.p,minuslogl=minuslogl,
               AIC=octave.AIC,BIC=octave.BIC,r2m=octave.r2m,r2m_rad=octave.r2m_rad))
