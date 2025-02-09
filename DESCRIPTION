@@ -1,7 +1,7 @@
 Package: microSAD
 Title: Sampling-explicit fitting of microbial SAD
-Version: 1.0.0.0001
-Date: 2024-06-13
+Version: 1.0.0.0005
+Date: 2025-02-13
 Authors@R: c(
     person(given = "Yingnan",
            family = "Gao",
